@@ -44,6 +44,8 @@ public class NBody{
 		StdDraw.clear();
 		StdDraw.picture(0, 0, IMAGE_BG);
 
+		/*StdAudio.play("./audio/2001.mid");*/
+
 		/* Draw planets */
 		for (Planet p: planet){
 			p.draw();
@@ -51,6 +53,13 @@ public class NBody{
 		/* Enable double buffering. This is a graphics technique to prevent flickering in the animation. */
 		StdDraw.enableDoubleBuffering();
 
+		StdOut.printf("%d\n", planet.length);
+		StdOut.printf("%.2e\n", r);
+		for (int i = 0; i < planet.length; i++) {
+    		StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
+            planet[i].xxPos, planet[i].yyPos, planet[i].xxVel,
+            planet[i].yyVel, planet[i].mass, planet[i].imgFileName);   
+		}
 		while(tTime<T){
 			double[] xForces = new double[planet.length];
 			double[] yForces = new double[planet.length];
@@ -76,11 +85,11 @@ public class NBody{
 		}
 
 		/* Test */
-		System.out.println(T);
+		/*System.out.println(T);
 		System.out.println(dt);
 		System.out.println(filename);
 		System.out.println(planet[2].xxPos);
-		System.out.println(Arrays.toString(planet));
+		System.out.println(Arrays.toString(planet));*/
 
 	}
 
