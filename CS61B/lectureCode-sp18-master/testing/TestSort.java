@@ -6,7 +6,8 @@ public class TestSort {
     /** Test the Sort.sort method. */
     @Test
     public void testSort() {
-        String[] input = {"i", "have", "an", "egg"};
+        String[] input;
+        input = new String[]{"i", "have", "an", "egg"};
         String[] expected = {"an", "egg", "have", "i"};
 
         Sort.sort(input);
